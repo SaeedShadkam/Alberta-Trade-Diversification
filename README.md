@@ -32,7 +32,7 @@ The model extends the classical **gravity model of international trade**, which 
 - Product-specific characteristics through learned embeddings
 
 ### Model Architecture
-The neural network employs a ** architecture** that processes four distinct feature categories through specialized sub-networks:
+The neural network employs a **multi-branch architecture** that processes four distinct feature categories through specialized sub-networks:
 - **Trade-specific features**: Price indicators, trade volumes, and complementarity measures
 - **Exporter characteristics**: Economic performance, export concentration, and competitiveness metrics
 - **Importer characteristics**: Market size, tariff structures, and import demand patterns
