@@ -47,7 +47,7 @@ This project introduces an **innovative embedding methodology** for commodity cl
 ### Technical Innovation
 Rather than treating Harmonized System (HS) commodity codes as discrete categorical variables, the model implements **learnable embedding vectors** that capture latent economic relationships between different product categories. Each HS4 code (4-digit commodity classification) is mapped to a **32-dimensional dense vector** through a neural embedding layer.
 
-![Embedding](Figs/Embedding.png)
+![Embedding](Figs/Embedding.jpg)
 
 
 ### Economic Significance
