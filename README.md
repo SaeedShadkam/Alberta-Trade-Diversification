@@ -40,6 +40,32 @@ The neural network employs a ** architecture** that processes four distinct feat
 
 The model uses **K-fold cross-validation** (5 folds) with 200 epochs of training, achieving robust performance across multiple evaluation metrics including MSE, R², and MAPE.
 
+## Novel Contribution: HS Code Embedding Approach
+
+This project introduces an **innovative embedding methodology** for commodity classification that represents a significant advancement over traditional categorical encoding approaches in trade flow modeling.
+
+### Technical Innovation
+Rather than treating Harmonized System (HS) commodity codes as discrete categorical variables, the model implements **learnable embedding vectors** that capture latent economic relationships between different product categories. Each HS4 code (4-digit commodity classification) is mapped to a **32-dimensional dense vector** through a neural embedding layer.
+
+![Embedding](Figs/Embedding.png)
+
+
+### Economic Significance
+The embedding approach allows the model to:
+1. **Discover Product Similarities**: Automatically identify economically related commodities (e.g., different petroleum products, various agricultural goods)
+2. **Capture Substitution Effects**: Model how trade patterns in similar products influence each other
+3. **Reduce Dimensionality**: Efficiently handle thousands of commodity codes without sparse categorical variables
+4. **Enable Transfer Learning**: Apply learned commodity relationships across different country pairs and time periods
+
+
+### Practical Applications
+The trained model generates **Alberta-specific trade predictions** for 2024, providing:
+- Commodity-level export forecasts across 30+ international markets
+- Currency-adjusted predictions (USD to CAD conversion using real-time exchange rates)
+- Interactive visualizations comparing predicted vs. actual trade flows
+- Identification of underexploited market opportunities and export potential
+
+
 ## Feature Engineering
 
 The model incorporates **13 core trade features** and **11 macroeconomic indicators**, all calculated as 3-year moving averages to reduce volatility and capture trend dynamics:
@@ -74,28 +100,6 @@ The model incorporates **13 core trade features** and **11 macroeconomic indicat
 **Bilateral Geographic Factors (2 variables):**
 - **MA_contig**: Geographic contiguity indicator
 - **MA_dist**: Weighted distance between economic centers
-
-## Novel Contribution: HS Code Embedding Approach
-
-This project introduces an **innovative embedding methodology** for commodity classification that represents a significant advancement over traditional categorical encoding approaches in trade flow modeling.
-
-### Technical Innovation
-Rather than treating Harmonized System (HS) commodity codes as discrete categorical variables, the model implements **learnable embedding vectors** that capture latent economic relationships between different product categories. Each HS4 code (4-digit commodity classification) is mapped to a **32-dimensional dense vector** through a neural embedding layer.
-
-### Economic Significance
-The embedding approach allows the model to:
-1. **Discover Product Similarities**: Automatically identify economically related commodities (e.g., different petroleum products, various agricultural goods)
-2. **Capture Substitution Effects**: Model how trade patterns in similar products influence each other
-3. **Reduce Dimensionality**: Efficiently handle thousands of commodity codes without sparse categorical variables
-4. **Enable Transfer Learning**: Apply learned commodity relationships across different country pairs and time periods
-
-
-### Practical Applications
-The trained model generates **Alberta-specific trade predictions** for 2024, providing:
-- Commodity-level export forecasts across 30+ international markets
-- Currency-adjusted predictions (USD to CAD conversion using real-time exchange rates)
-- Interactive visualizations comparing predicted vs. actual trade flows
-- Identification of underexploited market opportunities and export potential
 
 ## Conclusion
 
