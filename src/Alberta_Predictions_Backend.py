@@ -234,6 +234,8 @@ def plot_trade_predictions(Results, name_of_commodity, HS4Code, include_RoW=True
 # Ensure Alberta_df has high quality data
 # Investigate the model predictions before adjusting them for the Alberta total supply value. See if they make sense before adjusting.
 # Train a model on the Top 50 countries instead of top alberta partners!
+# Add a HS4/HS6 basket comparison measure to the model.
+# Calculate a measure to compare countries export diversification, compare that to Canada and investigate it for the selected countries (The goal is to provide justification for the country selection stage.)
 ##################################
 
 
