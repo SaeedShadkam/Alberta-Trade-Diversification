@@ -33,7 +33,6 @@ The framework in this repository supports several real-world use cases:
 - **Concentration-risk monitoring** by comparing realized vs. potential flows.
 - **Evidence-based input** to trade missions, investment-attraction work, and economic-development planning.
 
-The tone is analytical: the model produces estimates of where trade could flow given a country's economic profile and product fit, not normative statements about which markets a region should pursue.
 
 ---
 
@@ -205,7 +204,7 @@ The intent is to answer questions of the form:
 - Across the validation panel, which features matter most on average, and which only matter conditionally (for example, tariff rates that bite only when paired with high importer demand)?
 - Where do the model's reasons disagree with classical gravity-model intuition, and is that disagreement defensible?
 
-This pipeline is exploratory in its current state. The infrastructure for extracting Shapley values is in place, but the production of stable, presentation-ready attribution charts and the integration of those charts into the prediction backend are flagged in Future Work below.
+
 
 ### Why this matters
 
@@ -214,7 +213,6 @@ Together, the embedding analysis and SHAP attribution provide two layers of inte
 - The embedding analysis answers the *strategic* question (does the model see products the way an economist would?).
 - The SHAP attribution answers the *tactical* question (for this specific country-product forecast, what is the model reacting to?).
 
-This is the difference between a model that produces numbers and a model that produces defensible decision-relevant insight.
 
 ---
 
@@ -226,10 +224,7 @@ This is a research and portfolio project. The following limitations are worth ac
 - **Data dependencies.** The pipeline depends on external data layers (an institutional SQL Server, BACI, Statistics Canada exports). Raw data is not bundled with the repository.
 - **Missing-value handling.** Several trade-specific features rely on simple imputation strategies (mean fill, zero fill with a flag, Canada-as-fallback for Alberta) that are pragmatic but introduce noise.
 - **Partner coverage.** Modelling is restricted to a top-30 importer set rather than the full universe of partners, so smaller-but-strategic markets may be excluded.
-- **Output adjustment.** The Alberta prediction layer rescales raw model outputs so total predicted exports match realized total exports for the prediction year. This is a useful comparability transformation, but the unadjusted outputs are the more honest representation of the model's behaviour.
-- **Interpretability.** Two explainability layers are present: a complete HS4 embedding analysis and an exploratory SHAP-based attribution script. The SHAP layer covers the core mechanics (DeepExplainer over the multi-input model, background sampling, per-branch attribution) but has not yet been wrapped into a stable, production-ready reporting pipeline.
 
-These are framed as areas for further development rather than fundamental flaws.
 
 ---
 
